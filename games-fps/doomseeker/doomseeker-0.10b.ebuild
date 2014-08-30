@@ -36,4 +36,6 @@ src_prepare() {
 
 	# Need a semicolon at the end here:
 	sed -i -e 's/^Categories=Game$/Categories=Game;/' media/Doomseeker.desktop
+	# Icon path makes assumptions about $PREFIX:
+	sed -i -e 's_^Icon=/usr/local/share/_Icon=/usr/share/_' media/Doomseeker.desktop
 }
